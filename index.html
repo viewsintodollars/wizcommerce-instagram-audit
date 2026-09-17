@@ -155,6 +155,17 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
 .closeline{font-size:62px;position:relative}
 .closefoot{font-size:14px;color:#9a9da4;position:relative}
 .closefoot .red{color:var(--red);font-weight:600}
+.contact{position:relative;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;font-size:17px;font-weight:600}
+.contact a{color:#fff;text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:3px}
+.contact a:hover{color:var(--red)}
+.contact .sep{color:#6b6e75}
+
+/* clickable credentials slide */
+.credlink{position:absolute;inset:0;display:block;cursor:pointer}
+.credlink img{width:100%;height:100%;object-fit:cover;display:block}
+.credcue{position:absolute;right:26px;bottom:64px;background:var(--red);color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.01em;padding:9px 16px;border-radius:999px;box-shadow:0 6px 20px rgba(252,81,1,.32);transition:transform .15s ease}
+.credlink:hover .credcue{transform:translateY(-2px)}
+.credlink:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
 
 /* nav ui */
 #bar{position:absolute;top:0;left:0;height:3px;background:var(--red);width:0;transition:width .45s cubic-bezier(.22,1,.36,1);z-index:5}
@@ -164,7 +175,7 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
 #nav button:hover{background:var(--red);border-color:var(--red);color:#fff}
 #nav button:active{transform:scale(.92)}
 #nav button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-.slide.dark ~ #nav button{background:transparent}
+.slide.dark ~ #nav button{background:transparent;border-color:#3a3d44;color:#9a9da4}
 
 
 /* --- audit deck additions --- */
@@ -275,7 +286,7 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
     <div class="kicker red">01 &middot; The profile today</div>
     <h2 class="tight">126 posts in, <em>the profile still doesn&rsquo;t sell.</em></h2>
     <p class="lead">A buyer who likes a clip lands here next. This screen tells them what you are, and nothing else.</p>
-    <div class="split lean" style="margin-top:16px">
+    <div class="split" style="margin-top:14px;grid-template-columns:1fr 300px;gap:44px">
       <div>
         <ul class="stack" style="margin-top:2px">
           <li><b>Handle carries a trailing underscore.</b> <b>@wizcommerce_</b> reads as the backup account, not the brand.</li>
@@ -283,10 +294,11 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
           <li><b>Bio is one descriptive line.</b> No proof, no next step.</li>
           <li><b>Five links behind one tinyurl.</b> &ldquo;and 4 more&rdquo; asks a buyer to choose. Most choose nothing.</li>
           <li><b>No highlights at all.</b> The row below the buttons is empty, so the grid starts cold.</li>
+          <li><b>Grid opens mid-sentence.</b> &ldquo;Everything,&rdquo; &ldquo;Their Territory&rdquo; &ldquo;we cannot&rdquo; are auto-caption fragments, not hooks.</li>
         </ul>
       </div>
       <div>
-        <div class="shot" style="height:400px"><img src="assets/profile-before.png" alt="Current WizCommerce Instagram profile" style="object-fit:contain;background:#0e0e0e"></div>
+        <div style="height:500px;border-radius:12px;border:1px solid var(--line);overflow:hidden"><img src="assets/profile-full.png" alt="Current WizCommerce Instagram profile" style="width:100%;display:block"></div>
         <div class="cap">@wizcommerce_ &middot; 17 Sep 2026</div>
       </div>
     </div>
@@ -298,17 +310,16 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
   <div class="inner">
     <div class="kicker red">02 &middot; The same account, rewritten</div>
     <h2 class="tight">Nothing reshot. <em>Only the words changed.</em></h2>
-    <div class="ba" style="margin-top:14px;grid-template-columns:1fr 1fr;gap:40px">
+    <div class="ba" style="margin-top:14px;gap:56px;align-items:start;grid-template-columns:1fr 1fr;max-width:840px">
       <div>
         <div class="tag now">Now</div>
-        <div class="shot" style="height:424px"><img src="assets/profile-before.png" alt="Current profile" style="object-fit:contain;background:#0e0e0e"></div>
+        <img src="assets/profile-before.png" alt="Current profile" style="width:100%;display:block;border-radius:12px;border:1px solid var(--line)">
       </div>
       <div>
         <div class="tag next">Proposed</div>
-        <div class="shot" style="height:424px"><img src="assets/profile-after.png" alt="Proposed profile" style="object-fit:contain;background:#0e0e0e"></div>
+        <img src="assets/profile-after.png" alt="Proposed profile" style="width:100%;display:block;border-radius:12px;border:1px solid var(--line)">
       </div>
     </div>
-    <div class="bignote" style="margin-top:14px">Same logo, same posts, same followers. <span>A profile that now asks for something.</span></div>
   </div>
 </section>
 
@@ -366,67 +377,35 @@ See the 2-min product walkthrough below
   </div>
 </section>
 
-<!-- 06 PROOF: RNR -->
-<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">06 / 07</div>
-  <div class="inner vc">
-    <div class="kicker red">06 &middot; We have run this format</div>
-    <h2 class="tight">A podcast taken from zero to <em>466M views</em>.</h2>
-    <p class="lead">Right Now With Rohan is a Hindi interview podcast. We launched the social presence from scratch and ran it clip-first, the same raw material you already have.</p>
-    <div class="stats" style="margin-top:26px">
-      <div class="stat hot"><div class="sn red">466M</div><div class="sp">Instagram views</div><div class="ss">Organic, no ad spend</div></div>
-      <div class="stat"><div class="sn">113K</div><div class="sp">Followers</div><div class="ss">From zero</div></div>
-      <div class="stat"><div class="sn">262K</div><div class="sp">YouTube subs</div><div class="ss">146M lifetime views</div></div>
-      <div class="stat"><div class="sn">12</div><div class="sp">Months</div><div class="ss">Jul 2024 &rarr; Jul 2025</div></div>
-    </div>
-    <div style="margin-top:24px">
-      <a class="reslink" href="https://www.instagram.com/rightnowwithrohan/" target="_blank" rel="noopener">See the account &rarr; instagram.com/rightnowwithrohan</a>
-    </div>
-  </div>
+<!-- 06 CREDENTIALS: RESULTS -->
+<section class="slide">
+  <a class="credlink" href="https://viewsintodollars.github.io/vid-bbm-credentials/" target="_blank" rel="noopener" aria-label="Open the full VID x BBM credentials deck">
+    <img src="assets/cred-results.png" alt="VID x BBM results">
+    <span class="credcue">View the full credentials deck &rarr;</span>
+  </a>
+  <div class="pageno" style="z-index:3">06 / 07</div>
 </section>
 
-<!-- 07 BRANDS -->
-<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">07 / 07</div>
-  <div class="inner vc">
-    <div class="kicker red">07 &middot; Who we have built for</div>
-    <h2 class="tight">25+ brands. <em>1 billion+ views.</em></h2>
-    <div class="stats" style="margin-top:20px">
-      <div class="stat hot"><div class="sn red">1B+</div><div class="sp">Views generated</div><div class="ss">Across creator, podcast and brand accounts</div></div>
-      <div class="stat"><div class="sn">25+</div><div class="sp">Brands</div><div class="ss">Eleven sectors</div></div>
-      <div class="stat"><div class="sn">2,500+</div><div class="sp">Paid registrations</div><div class="ss">For a single flagship summit</div></div>
-      <div class="stat"><div class="sn">1,800+</div><div class="sp">Creatives delivered</div><div class="ss">Reels, campaigns, assets</div></div>
-    </div>
-    <div class="brands">
-      <div class="brand">Sahaj Talwar</div>
-      <div class="brand">Right Now With Rohan</div>
-      <div class="brand">Food Entrepreneurs Summit</div>
-      <div class="brand">ReliefVeda</div>
-      <div class="brand">Mauji Time Cafe</div>
-      <div class="brand">Spolto</div>
-      <div class="brand">Janma Care</div>
-      <div class="brand">Nutriosa</div>
-      <div class="brand">Atharva Oceana</div>
-      <div class="brand">Revyur</div>
-      <div class="brand">Third Spaces Inc.</div>
-      <div class="brand">SBOOCH</div>
-      <div class="brand">Renv8 Spaces</div>
-      <div class="brand">Safe Smile Implants</div>
-      <div class="brand">La Selva Pench</div>
-      <div class="brand">All That&rsquo;s Coffee</div>
-      <div class="brand">Expert Panel</div>
-      <div class="brand more">+ more</div>
-    </div>
-    <div style="margin-top:18px">
-      <a class="reslink" href="https://viewsintodollars.github.io/vid-bbm-credentials/" target="_blank" rel="noopener">Full credentials deck &rarr; case studies and results</a>
-    </div>
-  </div>
+<!-- 07 CREDENTIALS: BRANDS -->
+<section class="slide">
+  <a class="credlink" href="https://viewsintodollars.github.io/vid-bbm-credentials/" target="_blank" rel="noopener" aria-label="Open the full VID x BBM credentials deck">
+    <img src="assets/cred-brands.png" alt="Brands we have built for">
+    <span class="credcue">View the full credentials deck &rarr;</span>
+  </a>
+  <div class="pageno" style="z-index:3">07 / 07</div>
 </section>
 
-<!-- 06 CLOSE -->
+<!-- CLOSE -->
 <section class="slide dark">
-  <div class="closewrap">
-    <div class="logocard"><img src="assets/lockup.png" alt="Views Into Dollars x Brands Benchmark"></div>
-    <div class="closeline">Worth <em>thirty minutes?</em></div>
-    <div class="closefoot">Jayesh Sinha &middot; <span class="red">jayesh@viewsintodollars.com</span> &middot; Views Into Dollars, with Brands Benchmark</div>
+  <div class="closewrap" style="gap:26px">
+    <div class="logocard" style="padding:22px 34px"><img src="assets/lockup.png" alt="Views Into Dollars x Brands Benchmark" style="height:56px"></div>
+    <div class="closeline" style="font-size:66px">Book a <em>call</em>.</div>
+    <div class="contact">
+      <a href="mailto:jayesh@viewsintodollars.com">jayesh@viewsintodollars.com</a>
+      <span class="sep">&middot;</span>
+      <a href="https://wa.me/919112137827">WhatsApp +91 91121 37827</a>
+    </div>
+    <div class="closefoot" style="margin-top:2px">Jayesh Sinha &middot; Bangalore</div>
   </div>
 </section>
 
