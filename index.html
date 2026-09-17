@@ -179,7 +179,7 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
 /* stat tiles */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
 .stat{border:1px solid var(--line);border-radius:14px;padding:20px 18px;background:#fff;position:relative}
-.stat::before{content:'';position:absolute;top:0;left:18px;width:30px;height:3px;background:var(--line);border-radius:0 0 3px 3px}
+.stat::before{content:'';position:absolute;top:1px;left:18px;width:30px;height:3px;background:var(--line);border-radius:0 0 3px 3px}
 .stat.hot::before{background:var(--red)}
 .stat .sn{font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1}
 .stat .sn.red{color:var(--red)}.stat .sn.soft{color:#b9b6b2}
@@ -230,6 +230,19 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
 .mxo.now{border-color:var(--ink);background:var(--surface)}
 .mxarrow{position:absolute;left:-28px;top:50%;transform:translateY(-50%);color:var(--red);font-size:22px;font-weight:700}
 
+/* copy-paste block */
+.copy{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:12px}
+.copy .ch{font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:9px}
+.copy code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.85;color:var(--ink);display:block;white-space:pre-wrap;word-break:break-word}
+.copy .cl{color:var(--soft);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:block;margin-top:11px;margin-bottom:1px}
+.copy .cl:first-child{margin-top:0}
+
+/* brand grid */
+.brands{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:20px}
+.brand{border:1px solid var(--line);border-radius:9px;padding:9px 7px;text-align:center;font-size:11px;font-weight:600;letter-spacing:-.01em;line-height:1.25;color:var(--ink);display:flex;align-items:center;justify-content:center;min-height:44px}
+.brand.more{background:var(--red);border-color:var(--red);color:#fff}
+.reslink{display:inline-block;margin-top:4px;font-size:13px;font-weight:600;color:var(--red);text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:2px}
+
 /* placeholder for images Jayesh is still adding */
 .todo{border:1.5px dashed var(--red);border-radius:12px;background:#fff8f6;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
 .todo span{font-size:11px;font-weight:600;color:var(--red);line-height:1.5;letter-spacing:.01em}
@@ -257,7 +270,7 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
 </section>
 
 <!-- 01 THE PROFILE TODAY -->
-<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">01 / 05</div>
+<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">01 / 07</div>
   <div class="inner">
     <div class="kicker red">01 &middot; The profile today</div>
     <h2 class="tight">126 posts in, <em>the profile still doesn&rsquo;t sell.</em></h2>
@@ -281,7 +294,7 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
 </section>
 
 <!-- 02 BEFORE / AFTER -->
-<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">02 / 05</div>
+<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">02 / 07</div>
   <div class="inner">
     <div class="kicker red">02 &middot; The same account, rewritten</div>
     <h2 class="tight">Nothing reshot. <em>Only the words changed.</em></h2>
@@ -300,58 +313,111 @@ radial-gradient(ellipse 45% 35% at 85% 0%,rgba(71,71,71,.14),transparent 60%)}
 </section>
 
 <!-- 03 HANDLE, NAME, BIO -->
-<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">03 / 05</div>
-  <div class="inner vc">
+<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">03 / 07</div>
+  <div class="inner">
     <div class="kicker red">03 &middot; Handle, name and bio</div>
-    <h2 class="tight">What to actually type <em>into each field</em>.</h2>
-    <div class="label" style="margin-top:20px">Handle</div>
-    <div class="chips" style="margin-top:2px">
-      <span class="chip big">@wizcommerce</span>
-      <span class="chip">fallback: @wizcommerceAI</span>
+    <h2 class="tight">Ready to <em>copy and paste</em>.</h2>
+    <div class="split wide" style="margin-top:14px">
+      <div>
+        <div class="shot" style="height:404px"><img src="assets/mock-fields.png" alt="Proposed edit profile screen" style="object-fit:contain;background:#000"></div>
+        <div class="cap">Mockup &middot; the Edit Profile screen, filled in</div>
+      </div>
+      <div>
+        <div class="copy">
+          <div class="ch">Paste this in now</div>
+          <code><span class="cl">Username</span>wizcommerce
+<span class="cl">Name</span>WizCommerce | B2B Wholesale Software
+<span class="cl">Bio</span>AI-powered B2B commerce for wholesalers and distributors
+2,000+ brands | $8M raised | 40% faster order cycles
+See the 2-min product walkthrough below
+<span class="cl">Link</span>wizcommerce.com/demo</code>
+        </div>
+        <ul class="stack" style="margin-top:12px">
+          <li><b>@wizcommerce</b> if free, else <b>@wizcommerceAI</b>.</li>
+          <li>Name field is what Instagram search reads. Two other options: <b>Wholesale Order Management</b>, <b>B2B Commerce for Distributors</b>.</li>
+          <li><b>Confirm the two proof numbers</b> before pasting. Only the $8M is public today.</li>
+        </ul>
+      </div>
     </div>
-    <div class="label">Name field, written for search</div>
-    <div class="chips dim" style="margin-top:2px">
-      <span class="chip">WizCommerce | B2B Wholesale Software</span>
-      <span class="chip">WizCommerce | Wholesale Order Management</span>
-      <span class="chip">WizCommerce | B2B Commerce for Distributors</span>
-    </div>
-    <div class="label">Bio, three lines that each do one job</div>
-    <ul class="stack" style="margin-top:0">
-      <li><b>What you are.</b> AI-powered B2B commerce for wholesalers and distributors.</li>
-      <li><b>Proof.</b> 2,000+ brands &middot; $8M raised &middot; 40% faster order cycles. Numbers to confirm before this goes live.</li>
-      <li><b>One instruction.</b> &ldquo;See the 2-min product walkthrough below&rdquo;, pointing at a single link.</li>
-    </ul>
   </div>
 </section>
 
 <!-- 04 HIGHLIGHTS -->
-<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">04 / 05</div>
+<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">04 / 07</div>
   <div class="inner vc">
     <div class="kicker red">04 &middot; Highlights</div>
     <h2 class="tight">An empty row <em>where the buying happens</em>.</h2>
-    <p class="lead">Highlights are the only part of a profile a buyer can browse on their own terms. There are none. Five to build, in this order.</p>
-    <div class="tilegrid" style="margin-top:34px">
-      <div class="tile"><span class="tl red">01</span><span>Product<br><span style="font-weight:400;font-size:12px;color:var(--grey)">What it actually does, screen by screen.</span></span></div>
-      <div class="tile"><span class="tl blue">02</span><span>Customers<br><span style="font-weight:400;font-size:12px;color:var(--grey)">Named wholesalers, results, quotes.</span></span></div>
-      <div class="tile"><span class="tl red">03</span><span>Podcast<br><span style="font-weight:400;font-size:12px;color:var(--grey)">The clip library in one place, not scattered through 126 posts.</span></span></div>
-      <div class="tile"><span class="tl blue">04</span><span>Team<br><span style="font-weight:400;font-size:12px;color:var(--grey)">Div and the people behind it. B2B buys from people.</span></span></div>
-      <div class="tile"><span class="tl red">05</span><span>Press<br><span style="font-weight:400;font-size:12px;color:var(--grey)">The $8M raise and any coverage since.</span></span></div>
-    </div>
+    <p class="lead">Highlights are the only part of a profile a buyer can browse on their own terms. There are none today. Five to build, in this order.</p>
+    <div class="shot" style="height:250px;margin-top:22px"><img src="assets/mock-highlights.png" alt="Proposed highlights row" style="object-fit:contain;background:#000"></div>
+    <div class="cap">Mockup &middot; how the row would read on the live profile</div>
+    <div class="bignote" style="margin-top:18px">Product and Customers do the selling. <span>Podcast turns 126 scattered posts into a library.</span></div>
   </div>
 </section>
 
 <!-- 05 PINS -->
-<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">05 / 05</div>
+<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">05 / 07</div>
   <div class="inner vc">
     <div class="kicker red">05 &middot; Pinned posts</div>
     <h2 class="tight">Three slots. <em>Two used, one wasted.</em></h2>
-    <p class="lead">The pins are the first three tiles every visitor sees. One of the three is doing nothing.</p>
-    <div class="pins" style="margin-top:26px">
-      <div class="pin"><div class="pnum">PIN 1</div><h5>Founder story</h5><p>Div Makkar card. Already pinned. Keep it where it is.</p></div>
-      <div class="pin" style="border-color:var(--red);border-width:2px"><div class="pnum">PIN 2 &middot; EMPTY</div><h5>How it works</h5><p>The product walkthrough. This slot is empty today, and it is the one a buyer needs most.</p></div>
-      <div class="pin"><div class="pnum">PIN 3</div><h5>The announcement</h5><p>$8M raise. Already pinned. Move it to third.</p></div>
+    <p class="lead">The pins are the first three tiles every visitor sees. The middle one is empty today, and it is the one a buyer needs most.</p>
+    <div class="shot" style="height:248px;margin-top:20px"><img src="assets/mock-pins.png" alt="Proposed three pinned posts" style="object-fit:contain;background:#000"></div>
+    <div class="cap">Mockup &middot; founder story, product walkthrough, the raise. Centre tile is the one to make.</div>
+    <div class="bignote" style="margin-top:18px">A buyer can see who you are and that you raised. <span>Not what the product does.</span></div>
+  </div>
+</section>
+
+<!-- 06 PROOF: RNR -->
+<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">06 / 07</div>
+  <div class="inner vc">
+    <div class="kicker red">06 &middot; We have run this format</div>
+    <h2 class="tight">A podcast taken from zero to <em>466M views</em>.</h2>
+    <p class="lead">Right Now With Rohan is a Hindi interview podcast. We launched the social presence from scratch and ran it clip-first, the same raw material you already have.</p>
+    <div class="stats" style="margin-top:26px">
+      <div class="stat hot"><div class="sn red">466M</div><div class="sp">Instagram views</div><div class="ss">Organic, no ad spend</div></div>
+      <div class="stat"><div class="sn">113K</div><div class="sp">Followers</div><div class="ss">From zero</div></div>
+      <div class="stat"><div class="sn">262K</div><div class="sp">YouTube subs</div><div class="ss">146M lifetime views</div></div>
+      <div class="stat"><div class="sn">12</div><div class="sp">Months</div><div class="ss">Jul 2024 &rarr; Jul 2025</div></div>
     </div>
-    <div class="bignote" style="margin-top:28px">A buyer can see who you are and that you raised. <span>Not what the product does.</span></div>
+    <div style="margin-top:24px">
+      <a class="reslink" href="https://www.instagram.com/rightnowwithrohan/" target="_blank" rel="noopener">See the account &rarr; instagram.com/rightnowwithrohan</a>
+    </div>
+  </div>
+</section>
+
+<!-- 07 BRANDS -->
+<section class="slide"><img class="slogo" src="assets/lockup.png" alt=""><div class="pageno">07 / 07</div>
+  <div class="inner vc">
+    <div class="kicker red">07 &middot; Who we have built for</div>
+    <h2 class="tight">25+ brands. <em>1 billion+ views.</em></h2>
+    <div class="stats" style="margin-top:20px">
+      <div class="stat hot"><div class="sn red">1B+</div><div class="sp">Views generated</div><div class="ss">Across creator, podcast and brand accounts</div></div>
+      <div class="stat"><div class="sn">25+</div><div class="sp">Brands</div><div class="ss">Eleven sectors</div></div>
+      <div class="stat"><div class="sn">2,500+</div><div class="sp">Paid registrations</div><div class="ss">For a single flagship summit</div></div>
+      <div class="stat"><div class="sn">1,800+</div><div class="sp">Creatives delivered</div><div class="ss">Reels, campaigns, assets</div></div>
+    </div>
+    <div class="brands">
+      <div class="brand">Sahaj Talwar</div>
+      <div class="brand">Right Now With Rohan</div>
+      <div class="brand">Food Entrepreneurs Summit</div>
+      <div class="brand">ReliefVeda</div>
+      <div class="brand">Mauji Time Cafe</div>
+      <div class="brand">Spolto</div>
+      <div class="brand">Janma Care</div>
+      <div class="brand">Nutriosa</div>
+      <div class="brand">Atharva Oceana</div>
+      <div class="brand">Revyur</div>
+      <div class="brand">Third Spaces Inc.</div>
+      <div class="brand">SBOOCH</div>
+      <div class="brand">Renv8 Spaces</div>
+      <div class="brand">Safe Smile Implants</div>
+      <div class="brand">La Selva Pench</div>
+      <div class="brand">All That&rsquo;s Coffee</div>
+      <div class="brand">Expert Panel</div>
+      <div class="brand more">+ more</div>
+    </div>
+    <div style="margin-top:18px">
+      <a class="reslink" href="https://viewsintodollars.github.io/vid-bbm-credentials/" target="_blank" rel="noopener">Full credentials deck &rarr; case studies and results</a>
+    </div>
   </div>
 </section>
 
